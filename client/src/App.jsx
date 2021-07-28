@@ -1,12 +1,13 @@
-import './App.css';
 import React, { Component } from 'react';
+import './App.css';
+import Navbar from './components/Navbar';
 
 class App extends Component {
   state = {};
   render() {
     return (
       <div className="App">
-        <h1>Hello world!</h1>
+        <Navbar />
       </div>
     );
   }
