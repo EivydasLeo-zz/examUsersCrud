@@ -2,11 +2,37 @@ import axios from 'axios';
 
 const UsersBaseUrl = 'http://localhost:4000/users';
 
+const reqOptions = {
+  mode: 'cors',
+  cache: 'no-cache',
+  credentials: 'same-origin',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  },
+  redirect: 'follow',
+  referrerPolicy: 'no-referrer',
+};
+
 export const getUsers = async () => {
   try {
     const usersResult = await axios.get(UsersBaseUrl);
     return usersResult.data;
   } catch (err) {
     console.log(err);
+  }
+};
+
+export const postNewUser = async (obj) => {
+  try {
+    const res = await fetch(`${UsersBaseUrl}/new`, {
+      method: 'POST',
+      body: JSON.stringify(obj),
+      ...reqOptions,
+    });
+    const result = await res.json();
+    console.log('New User Created: ', result);
+  } catch (err) {
+    console.log('Error occured: ', err);
   }
 };

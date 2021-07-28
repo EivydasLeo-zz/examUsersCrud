@@ -1,37 +1,105 @@
 import React, { Component } from 'react';
+import { postNewUser } from '../../service/fetchData';
 
 class NewUserForm extends Component {
-  state = {};
+  state = {
+    userName: '',
+    age: 0,
+    email: '',
+    password: '',
+    password2: '',
+  };
+
+  handleUserName = (event) => {
+    this.setState({ userName: event.target.value });
+  };
+  handleEmail = (event) => {
+    this.setState({ email: event.target.value });
+  };
+  handleAge = (event) => {
+    this.setState({ age: event.target.value });
+  };
+  handlePassword = (event) => {
+    this.setState({ password: event.target.value });
+  };
+  handlePassword2 = (event) => {
+    this.setState({ password2: event.target.value });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const objToSend = {
+      userName: this.state.userName,
+      email: this.state.email,
+      age: this.state.age,
+      password: this.state.password,
+      password2: this.state.password2,
+    };
+    postNewUser(objToSend);
+    const history = this.props.history;
+    history.push('/users');
+    console.log('I will send this ', objToSend);
+  };
+
   render() {
     return (
       <div className="NewUserForm-container">
-        <form className="row row-cols-lg-auto g-3 align-items-center">
+        <form onSubmit={this.handleSubmit} className="row row-cols-lg-auto g-3 align-items-center">
           <div className="col-12">
             <label className="visually-hsidden">User Name:</label>
             <div className="input-group">
-              <input type="text" className="form-control" placeholder="Username..." />
-            </div>
-            <label className="visually-hsidden">Age:</label>
-            <div className="input-group">
-              <input type="text" className="form-control" placeholder="Email..." />
+              <input
+                value={this.state.userName}
+                onChange={this.handleUserName}
+                type="text"
+                className="form-control"
+                placeholder="Username..."
+              />
             </div>
             <label className="visually-hsidden">Email:</label>
             <div className="input-group">
-              <input type="text" className="form-control" placeholder="Age..." />
+              <input
+                value={this.state.email}
+                onChange={this.handleEmail}
+                type="text"
+                className="form-control"
+                placeholder="Email..."
+              />
+            </div>
+            <label className="visually-hsidden">Age:</label>
+            <div className="input-group">
+              <input
+                value={this.state.age}
+                onChange={this.handleAge}
+                type="text"
+                className="form-control"
+                placeholder="Age..."
+              />
             </div>
             <label className="visually-hsidden">Password:</label>
             <div className="input-group">
-              <input type="text" className="form-control" placeholder="Password..." />
+              <input
+                value={this.state.password}
+                onChange={this.handlePassword}
+                type="text"
+                className="form-control"
+                placeholder="Password..."
+              />
             </div>
             <label className="visually-hsidden">Re-type Password:</label>
             <div className="input-group">
-              <input type="text" className="form-control" placeholder="Password..." />
+              <input
+                value={this.state.password2}
+                onChange={this.handlePassword2}
+                type="text"
+                className="form-control"
+                placeholder="Password..."
+              />
             </div>
           </div>
-
           <div className="col-12">
             <button type="submit" className="btn btn-warning formBtn">
-              Submit
+              Create User
             </button>
           </div>
         </form>

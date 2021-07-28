@@ -2,8 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const UserModel = require('./models/UserSchema');
 const cors = require('cors');
+const UserModel = require('./models/UserSchema');
+
 const app = express();
 
 const PORT = 4000;
@@ -29,12 +30,7 @@ app.get('/', (req, res) => {
 app.post('/users/new', (req, res) => {
   console.log(req.body);
 
-  const newUser = new UserModel({
-    userName: 'Kevinas',
-    age: 28,
-    email: 'Kevin@gmail.com',
-    password: 'Neatspesi',
-  });
+  const newUser = new UserModel(req.body);
 
   newUser
     .save()
