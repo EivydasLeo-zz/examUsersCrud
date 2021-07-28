@@ -55,7 +55,7 @@ label {
 }
 
 .formBtn {
-  margin: 1.5rem 0 1.5rem 4.3rem;
+  margin: 1.5rem 0 1.5rem 5rem;
 }
 
 /* UserList */
@@ -88,18 +88,6 @@ label {
 .BtnEdit {
   margin: 1rem;
 }
-
-/* .filteredBtn {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.filteredBtn button {
-  margin: 0 1rem 0 1rem;
-} */
-
-/* Footer */
 
 .footer-container {
   height: 150px;

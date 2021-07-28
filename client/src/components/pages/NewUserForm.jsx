@@ -112,7 +112,7 @@ class NewUserForm extends Component {
           </div>
           <div className="col-12">
             <button type="submit" className="btn btn-warning formBtn">
-              Create User
+              Submit
             </button>
           </div>
         </form>
