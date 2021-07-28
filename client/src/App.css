@@ -10,6 +10,10 @@
   margin: 0 auto;
 }
 
+.navbar-container {
+  box-shadow: 0px 9px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
 .navbar {
   height: 150px;
   text-align: center;
@@ -21,6 +25,14 @@
 
 #navLink:hover {
   text-decoration: underline;
+  color: rgb(233, 231, 231);
+}
+
+/* Main-container */
+
+.main-container {
+  background: linear-gradient(orange, #343a40);
+  height: 970px;
 }
 
 /* Responsive */
