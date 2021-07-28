@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import { Switch, Route } from 'react-router';
-import NewUser from './components/pages/NewUserForm';
-import Users from './components/pages/UsersList';
+import NewUserForm from './components/pages/NewUserForm';
+import UsersList from './components/pages/UsersList';
+import Footer from './components/Footer';
 
 class App extends Component {
   state = {};
@@ -13,10 +14,11 @@ class App extends Component {
         <Navbar />
         <div className="main-container">
           <Switch>
-            <Route path="/users/new" component={NewUser}></Route>
-            <Route path="/users" component={Users}></Route>
+            <Route path="/user/new" component={NewUserForm}></Route>
+            <Route path="/users" component={UsersList}></Route>
           </Switch>
         </div>
+        <Footer />
       </div>
     );
   }

@@ -32,7 +32,40 @@
 
 .main-container {
   background: linear-gradient(orange, #343a40);
-  height: 970px;
+  height: 720px;
+}
+
+/* NewUserForm */
+
+.NewUserForm-container {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: 280px;
+  background-color: #343a40;
+  margin-top: 3rem;
+  border-radius: 10px;
+}
+
+label {
+  color: orange;
+  margin: 1rem 0rem 0.5rem 0.2rem;
+}
+
+.formBtn {
+  margin: 1.5rem 0 1.5rem 4.3rem;
+}
+
+/* Footer */
+
+.footer-container {
+  height: 150px;
+  background-color: #343a40;
+  color: orange;
+  text-align: center;
+  padding-top: 7.5rem;
 }
 
 /* Responsive */
@@ -40,5 +73,6 @@
 @media only screen and (min-width: 992px) {
   .navbar-nav {
     gap: 3rem;
+    margin-right: 4rem;
   }
 }
