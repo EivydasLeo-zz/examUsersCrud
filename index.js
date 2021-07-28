@@ -55,4 +55,20 @@ app.delete('/users/delete/:id', async (req, res) => {
   res.send({ success: true, msg: `User has been deleted.` });
 });
 
+// edit place
+
+app.put('/users/edit/:id', async (req, res) => {
+  const { userName, email, age, password } = req.body;
+  await UserModel.findOneAndUpdate(
+    { _id: req.params.id },
+    {
+      userName,
+      email,
+      age,
+      password,
+    }
+  );
+  res.send({ success: true, msg: `Place ${userName} has been updated.` });
+});
+
 app.listen(PORT, console.log(`Back end online on port ${PORT}`));

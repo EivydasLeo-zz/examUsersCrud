@@ -48,3 +48,12 @@ export const deleteOneUser = async (id) => {
     console.log('Delete user failed.. ', err);
   }
 };
+
+export const editOneUser = async (id, newBody) => {
+  const resp = await fetch(`${UsersBaseUrl}/edit/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(newBody),
+    ...reqOptions,
+  });
+  await resp.json();
+};

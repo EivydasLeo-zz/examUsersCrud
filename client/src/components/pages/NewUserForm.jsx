@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
-import { postNewUser } from '../../service/fetchData';
+import { postNewUser, editOneUser, getUsers } from '../../service/fetchData';
 
 class NewUserForm extends Component {
   state = {
     userName: '',
-    age: 0,
     email: '',
+    age: 18,
     password: '',
     password2: '',
   };
+
+  async componentDidMount() {
+    if (this.props.match.params.id) {
+      const user = (await getUsers()).find((user) => user._id === this.props.match.params.id);
+      this.setState(user);
+    }
+  }
 
   handleUserName = (event) => {
     this.setState({ userName: event.target.value });
@@ -35,7 +42,13 @@ class NewUserForm extends Component {
       password: this.state.password,
       password2: this.state.password2,
     };
-    postNewUser(objToSend);
+
+    if (this.state._id) {
+      editOneUser(this.state._id, objToSend);
+    } else {
+      postNewUser(objToSend);
+    }
+
     const history = this.props.history;
     history.push('/users');
     console.log('I will send this ', objToSend);
@@ -81,7 +94,7 @@ class NewUserForm extends Component {
               <input
                 value={this.state.password}
                 onChange={this.handlePassword}
-                type="text"
+                type="password"
                 className="form-control"
                 placeholder="Password..."
               />
@@ -91,7 +104,7 @@ class NewUserForm extends Component {
               <input
                 value={this.state.password2}
                 onChange={this.handlePassword2}
-                type="text"
+                type="password"
                 className="form-control"
                 placeholder="Password..."
               />

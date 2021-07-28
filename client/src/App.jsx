@@ -15,6 +15,7 @@ class App extends Component {
         <div className="main-container">
           <Switch>
             <Route path="/user/new" component={NewUserForm}></Route>
+            <Route path="/edit_user/:id" component={NewUserForm}></Route>
             <Route path="/users" component={UsersList}></Route>
           </Switch>
         </div>
