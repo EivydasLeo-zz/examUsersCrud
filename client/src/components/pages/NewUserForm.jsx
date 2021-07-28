@@ -69,16 +69,6 @@ class NewUserForm extends Component {
                 placeholder="Username..."
               />
             </div>
-            <label className="visually-hsidden">Email:</label>
-            <div className="input-group">
-              <input
-                value={this.state.email}
-                onChange={this.handleEmail}
-                type="text"
-                className="form-control"
-                placeholder="Email..."
-              />
-            </div>
             <label className="visually-hsidden">Age:</label>
             <div className="input-group">
               <input
@@ -89,6 +79,17 @@ class NewUserForm extends Component {
                 placeholder="Age..."
               />
             </div>
+            <label className="visually-hsidden">Email:</label>
+            <div className="input-group">
+              <input
+                value={this.state.email}
+                onChange={this.handleEmail}
+                type="text"
+                className="form-control"
+                placeholder="Email..."
+              />
+            </div>
+
             <label className="visually-hsidden">Password:</label>
             <div className="input-group">
               <input

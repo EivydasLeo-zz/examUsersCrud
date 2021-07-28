@@ -39,8 +39,8 @@ class UsersList extends Component {
           <div className="card bg-dark " id="cardUsersList" key={obj._id}>
             <div className="card-body ">
               <h6 className="card-title">Username: {obj.userName}</h6>
-              <h6 className="card-subtitle mb-2">Email: {obj.email} </h6>
               <h6 className="card-subtitle mb-2">Age: {obj.age} </h6>
+              <h6 className="card-subtitle mb-2">Email: {obj.email} </h6>
               <h6 className="card-subtitle mb-2">Password: {obj.password} </h6>
               <button onClick={() => this.handleEdit(obj._id)} className="btn btn-warning BtnEdit">
                 Edit
