@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const UserModel = require('./models/UserSchema');
+const cors = require('cors');
 const app = express();
 
 const PORT = 4000;
@@ -18,6 +19,7 @@ mongoose
 // MIddleware
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.status(200).json(`Serveris veikia an port ${PORT}`);
