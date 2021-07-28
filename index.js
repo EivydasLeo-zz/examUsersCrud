@@ -48,4 +48,11 @@ app.get('/users', async (req, res) => {
   }
 });
 
+// delete user
+
+app.delete('/users/delete/:id', async (req, res) => {
+  await UserModel.findOneAndDelete({ _id: req.params.id });
+  res.send({ success: true, msg: `User has been deleted.` });
+});
+
 app.listen(PORT, console.log(`Back end online on port ${PORT}`));

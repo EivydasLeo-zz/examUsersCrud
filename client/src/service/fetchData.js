@@ -36,3 +36,15 @@ export const postNewUser = async (obj) => {
     console.log('Error occured: ', err);
   }
 };
+
+export const deleteOneUser = async (id) => {
+  try {
+    const resp = await fetch(`${UsersBaseUrl}/delete/${id}`, {
+      method: 'DELETE',
+      ...reqOptions,
+    });
+    await resp.json();
+  } catch (err) {
+    console.log('Delete user failed.. ', err);
+  }
+};
