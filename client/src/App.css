@@ -45,7 +45,7 @@
 form {
   width: 280px;
   background-color: #343a40;
-  margin-top: 3rem;
+  margin-top: 6rem;
   border-radius: 10px;
 }
 
@@ -57,6 +57,41 @@ label {
 .formBtn {
   margin: 1.5rem 0 1.5rem 4.3rem;
 }
+
+/* UserList */
+
+.UserList-container {
+  display: flex;
+  justify-content: center;
+}
+
+.card-body {
+  text-align: center;
+  color: white;
+}
+
+.card-body > h6 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-body > a {
+  margin: 1rem 0.5rem 0.5rem;
+}
+
+#cardUsersList {
+  margin-top: 2rem;
+}
+
+/* .filteredBtn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.filteredBtn button {
+  margin: 0 1rem 0 1rem;
+} */
 
 /* Footer */
 
