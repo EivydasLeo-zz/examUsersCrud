@@ -28,16 +28,26 @@ app.post('/users/new', (req, res) => {
   console.log(req.body);
 
   const newUser = new UserModel({
-    userName: 'Tomas30',
-    age: 30,
-    email: 'Tomas@gmail.com',
-    password: 'Tomas1',
+    userName: 'Kevinas',
+    age: 28,
+    email: 'Kevin@gmail.com',
+    password: 'Neatspesi',
   });
 
   newUser
     .save()
     .then((result) => res.json(result))
     .catch((err) => console.log(err));
+});
+
+// get all users
+app.get('/users', async (req, res) => {
+  try {
+    const users = await UserModel.find();
+    res.json(users);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 app.listen(PORT, console.log(`Back end online on port ${PORT}`));

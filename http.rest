@@ -8,3 +8,8 @@ Content-Type: application/json
     "userName": "Bob"    
     
 }
+
+### get all users
+GET http://localhost:4000/users
+
+
