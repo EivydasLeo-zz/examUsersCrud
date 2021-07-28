@@ -32,7 +32,7 @@
 
 .main-container {
   background: linear-gradient(orange, #343a40);
-  height: 720px;
+  height: 1200px;
 }
 
 /* NewUserForm */
@@ -63,6 +63,7 @@ label {
 .UserList-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card-body {
@@ -80,7 +81,7 @@ label {
 }
 
 #cardUsersList {
-  margin: 4rem 2rem 0 1rem;
+  margin: 2rem 0.2rem 0 0.2rem;
   border-radius: 10px;
 }
 
@@ -105,7 +106,7 @@ label {
   background-color: #343a40;
   color: orange;
   text-align: center;
-  padding-top: 7.5rem;
+  padding-top: 6.5rem;
 }
 
 /* Responsive */
